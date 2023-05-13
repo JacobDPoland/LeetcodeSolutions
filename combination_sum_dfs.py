@@ -16,7 +16,7 @@ class Solution(object):
             if i >= len(candidates) or total > target:
                 return
             
-            # recursisve steps
+            # recursive steps
 
             # case where candidates[i] is included in combo
             current.append(candidates[i])
