@@ -1,3 +1,4 @@
+from collections import deque
 class Solution(object):
     def numIslands(self, grid):
         """
@@ -15,11 +16,9 @@ class Solution(object):
             x: initial row
             y: initial column
             """
-            queue = [(x, y)]
+            queue = deque([(x, y)])
             while len(queue) != 0:
-                tile = queue.pop(0)
-                row = tile[0]  # current row
-                col = tile[1]  # current column
+                row, col = queue.popleft()  # get current row and column
 
                 # bfs branch ends if it encounters a 0 or a previously seen tile
                 if grid[row][col] == "0" or seen[row][col]:
@@ -43,7 +42,7 @@ class Solution(object):
         # end of bfs function                
 
 
-        for i in range(ROWS):
+        for i in range(ROWS): 
             for j in range(COLS):
                 if grid[i][j] == "1" and not seen[i][j]:
                     bfs(i, j)  # explore whole island and track seen tiles
