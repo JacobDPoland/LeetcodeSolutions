@@ -1,5 +1,5 @@
 from collections import deque
-class Solution(object):
+class Solution(object): 
     def numIslands(self, grid):
         """
         :type grid: List[List[str]]
