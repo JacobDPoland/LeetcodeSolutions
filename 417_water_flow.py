@@ -35,7 +35,7 @@ class Solution:
         #     for c in range(COLS):
         #         if (r, c) in pac and (r, c) in atl:
         #             res.append([r, c])
-
+        
         res = pac.intersection(atl)
         return res
 
